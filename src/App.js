@@ -72,31 +72,31 @@ class App extends Component {
       <div className="App">
         <div className="calc-wrapper">
           <div className="row">
-            <Input max='2'>{this.state.input}</Input>
+            <Input>{this.state.input}</Input>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>7</Button>
             <Button handleClick={this.addToInput}>8</Button>
             <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={()=>this.calculation('divide')}>/</Button>
+            <Button handleClick={()=>this.calculation(App.DIVIDE)}>/</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>4</Button>
             <Button handleClick={this.addToInput}>5</Button>
             <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={(event)=>{this.calculation('multiply')}}>*</Button>
+            <Button handleClick={(event)=>{this.calculation(App.MULTIPLY)}}>*</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addToInput}>1</Button>
             <Button handleClick={this.addToInput}>2</Button>
             <Button handleClick={this.addToInput}>3</Button>
-            <Button handleClick={(event)=>{this.calculation('plus')}}>+</Button>
+            <Button handleClick={(event)=>{this.calculation(App.PLUS)}}>+</Button>
           </div>
           <div className="row">
             <Button handleClick={this.addDecimal}>.</Button>
             <Button handleClick={this.addToInput}>0</Button>
             <Button handleClick={this.evaluate}>=</Button>
-            <Button handleClick={(event=>{this.calculation('subtract')})}>-</Button>
+            <Button handleClick={(event=>{this.calculation(App.SUBTRACT)})}>-</Button>
           </div>
           <div className='row'>
             <ClearButton handleClearAll={this.clearInput}>Clear</ClearButton>
@@ -114,5 +114,7 @@ App.PLUS="plus"
 App.SUBTRACT="subtract"
 App.MULTIPLY="multiply"
 App.DIVIDE="divide"
+App.CLEAR="clear"
+App.CLEARALL="clearAll"
 
 export default App;
