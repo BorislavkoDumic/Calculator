@@ -5,7 +5,6 @@ const initialState ={
   displayValue:'0',
   operator:null,
   previusNumber:0,
-  total:null
 };
 
 export const calculate = (displayValue, previusNumber,operator)=>{
@@ -28,13 +27,11 @@ const calculator = (state = initialState, action ) =>{
         case actionTypes.INPUT_NUMBER:
             return {
                 ...state,
-			    total: state.operator && state.displayValue !=="0"?`${ state.displayValue }${ action.number }`: null,
                 displayValue: state.displayValue === "0" ? action.number.toString() :`${ state.displayValue }${ action.number }`
             };
         case actionTypes.INPUT_OPERATOR:
             return {
                 displayValue:'0',
-                total: `${ state.displayValue }`,
                 operator:action.operator,
                 previusNumber:state.operator ? calculate ( parseFloat( state.displayValue ), state.previusNumber, state.operator ): parseFloat( state.displayValue )
             };

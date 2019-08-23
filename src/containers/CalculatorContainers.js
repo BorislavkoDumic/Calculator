@@ -11,7 +11,7 @@ import { PLUS, DIVIDE, MULTI, SUBTRACT} from '../utils/actionTypes';
 
 class CalculatorContainers extends Component {
     render(){
-        const {number,onNumClick,onOpeClick,onClearClick,onEqualClick,total}= this.props;
+        const {number,onNumClick,onOpeClick,onClearClick,onEqualClick,displayValue}= this.props;
         return(
             <div className ="App">
             <div className="calc-wrapper">
@@ -37,7 +37,7 @@ class CalculatorContainers extends Component {
                 <div className = "row" >
                     <NumBtn n={0} onClick={() => onNumClick(0)}/>
                     <NumBtn n={'.'} onClick={() => onNumClick('.')}/>
-                    <EqualBtn n={'='} onClick={() =>onEqualClick(total? total: '' )}/>
+                    <EqualBtn n={'='} onClick={() =>onEqualClick(displayValue? displayValue: '' )}/>
                     <OpeBtn operator={'-'} onClick={() => onOpeClick(SUBTRACT)}/>
                 </div>
                 <div className ="row">
@@ -50,6 +50,7 @@ class CalculatorContainers extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
         number: state.calculator,
     };
