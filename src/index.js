@@ -9,11 +9,11 @@ import './assets/index.css'
 
 const store = createStore(reducer)
 
-ReactDOM.render(
-<Provider store= {store}>
-<CalculatorContainer/>
-</Provider>,
- document.getElementById('root'));
+    ReactDOM.render(
+        <Provider store= {store}>
+            <CalculatorContainer/>
+        </Provider>,
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

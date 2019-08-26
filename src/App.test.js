@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import CalculatorContainers from './containers/CalculatorContainers';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<CalculatorContainers />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
