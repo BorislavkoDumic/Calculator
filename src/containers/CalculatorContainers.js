@@ -50,7 +50,6 @@ class CalculatorContainers extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         number: state.calculator,
     };
