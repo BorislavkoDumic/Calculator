@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import CalculatorContainers from './containers/CalculatorContainers';
+import CalculatorContainer from './containers/CalculatorContainers';
+import reducer from './reducers'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<CalculatorContainers />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+it("Matches the snapshot",()=>{
+  const store = createStore(reducer)
+  const tree = renderer.create(
+  <Provider store= {store}>
+    <CalculatorContainer/>
+  </Provider>).toJSON()
+  expect(tree).toMatchSnapshot()
+})

@@ -1,7 +1,7 @@
 import * as actionTypes from "../utils/actionTypes";
 import * as operators from "../utils/actionTypes"
 
-const initialState ={
+export const initialState ={
   displayValue:'0',
   operator:null,
   previusNumber:0,
