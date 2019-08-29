@@ -1,17 +1,16 @@
-import * as actionTypes from '../utils/actionTypes'
+import * as actionTypes from "../utils/actionTypes";
 
 export const onNumClick = number => ({
-    type: actionTypes.INPUT_NUMBER,
-    number, 
+  type: actionTypes.INPUT_NUMBER,
+  number
 });
 export const onOpeClick = operator => ({
-    type:actionTypes.INPUT_OPERATOR,
-    operator,
+  type: actionTypes.INPUT_OPERATOR,
+  operator
 });
-export const onClearClick = () =>({
-    type: actionTypes.CLEAR,
+export const onClearClick = () => ({
+  type: actionTypes.CLEAR
 });
-export const onEqualClick = () =>({
-    type: actionTypes.INPUT_EQUAL,
+export const onEqualClick = () => ({
+  type: actionTypes.INPUT_EQUAL
 });
-

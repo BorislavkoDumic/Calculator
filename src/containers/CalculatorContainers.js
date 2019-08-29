@@ -4,12 +4,12 @@ import NumBtn from '../compenentsredux/NumBtn';
 import OpeBtn from '../compenentsredux/OpeBtn';
 import Result from '../compenentsredux/Result';
 import ClearBtn from '../compenentsredux/ClearBtn';
-import EqualBtn from '../compenentsredux/EqualBtn'
+import EqualBtn from '../compenentsredux/EqualBtn';
 import {onNumClick,onClearClick,onOpeClick,onEqualClick} from "../actions/index"
 import { PLUS, DIVIDE, MULTI, SUBTRACT} from '../utils/actionTypes';
 
 
-class CalculatorContainers extends Component {
+export class CalculatorContainers extends Component {
     render(){
         const {number,onNumClick,onOpeClick,onClearClick,onEqualClick,displayValue}= this.props;
         return(
