@@ -1,4 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
-  "projectId": "9vdks9"
+  "projectId": "9vdks9",
+  "chromeWebSecurity": false,
+  "video": true
 }
