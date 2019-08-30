@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.396" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-08-30T09:16:59" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Cookies" timestamp="2019-08-30T09:16:59" tests="5" failures="0" time="2.396">
+    <testcase name="Cookies cy.getCookie() - get a browser cookie" time="0.518" classname="cy.getCookie() - get a browser cookie">
+    </testcase>
+    <testcase name="Cookies cy.getCookies() - get browser cookies" time="0.547" classname="cy.getCookies() - get browser cookies">
+    </testcase>
+    <testcase name="Cookies cy.setCookie() - set a browser cookie" time="0.476" classname="cy.setCookie() - set a browser cookie">
+    </testcase>
+    <testcase name="Cookies cy.clearCookie() - clear a browser cookie" time="0.426" classname="cy.clearCookie() - clear a browser cookie">
+    </testcase>
+    <testcase name="Cookies cy.clearCookies() - clear browser cookies" time="0.429" classname="cy.clearCookies() - clear browser cookies">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2019-08-30T09:16:31" tests="1" failures="1" time="0">
+    <testcase name=" An uncaught error was detected outside of a test" time="0" classname="An uncaught error was detected outside of a test">
+      <failure message="Cannot call &quot;cy.get()&quot; outside a running test.
+
+This usually happens when you accidentally write commands outside an it(...) test.
+
+If that is the case, just move these commands inside an it(...) test.
+
+Check your test file for errors.
+
+https://on.cypress.io/cannot-execute-commands-outside-test
+
+This error originated from your test code, not from Cypress.
+
+When Cypress detects uncaught errors originating from your test code it will automatically fail the current test.
+
+Cypress could not associate this error to any specific test.
+
+We dynamically generated a new test to display this failure." type="Uncaught CypressError"><![CDATA[Uncaught CypressError: Cannot call "cy.get()" outside a running test.
+
+This usually happens when you accidentally write commands outside an it(...) test.
+
+If that is the case, just move these commands inside an it(...) test.
+
+Check your test file for errors.
+
+https://on.cypress.io/cannot-execute-commands-outside-test
+
+This error originated from your test code, not from Cypress.
+
+When Cypress detects uncaught errors originating from your test code it will automatically fail the current test.
+
+Cypress could not associate this error to any specific test.
+
+We dynamically generated a new test to display this failure.
+    at Object.cypressErr (http://localhost:59960/__cypress/runner/cypress_runner.js:85348:11)
+    at Object.throwErr (http://localhost:59960/__cypress/runner/cypress_runner.js:85303:18)
+    at Object.throwErrByPath (http://localhost:59960/__cypress/runner/cypress_runner.js:85335:17)
+    at Object.ensureRunnable (http://localhost:59960/__cypress/runner/cypress_runner.js:76541:21)
+    at Object.cy.(anonymous function) [as get] (http://localhost:59960/__cypress/runner/cypress_runner.js:80261:17)
+    at context.describe.context.context (http://localhost:59960/__cypress/runner/cypress_runner.js:26827:10)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -3,6 +3,6 @@ describe ('Cypress',()=>{
         expect(true).to.equal(true)
     })
     it('visit the app',()=>{
-        cy.visit('/')
+        cy.visit('http://localhost:3000')
     })
 })
