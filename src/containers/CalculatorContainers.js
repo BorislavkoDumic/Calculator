@@ -7,6 +7,7 @@ import ClearBtn from '../compenentsredux/ClearBtn';
 import EqualBtn from '../compenentsredux/EqualBtn';
 import {onNumClick,onClearClick,onOpeClick,onEqualClick} from "../actions/index"
 import { PLUS, DIVIDE, MULTI, SUBTRACT} from '../utils/actionTypes';
+import Dotbtn from '../compenentsredux/Dotbtn';
 
 
 export class CalculatorContainers extends Component {
@@ -36,7 +37,7 @@ export class CalculatorContainers extends Component {
                 </div>
                 <div className = "row" >
                     <NumBtn n={0} onClick={() => onNumClick(0)} />
-                    <NumBtn n={'.'} onClick={() => onNumClick('.')} />
+                    <Dotbtn n={'.'} name={'Dot'} onClick={() => onNumClick('.')} />
                     <EqualBtn n={'='} name={'Equal'} onClick={() =>onEqualClick(displayValue? displayValue: '' )} data-cy="buttonEqual"/>
                     <OpeBtn operator={'-'} name={'Subtract'} onClick={() => onOpeClick(SUBTRACT)}/>
                 </div>
