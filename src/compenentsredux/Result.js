@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Result = ({result}) => (
+const Result = ({name,result}) => (
     <div>
-        <span className="input">{result}</span>
+        <span className="input" data-cy={`display${name}`} >{result}</span>
     </div>
 );
 

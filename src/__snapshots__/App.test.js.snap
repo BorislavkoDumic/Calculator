@@ -1,145 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches the snapshot 1`] = `
-<div
-  className="App"
->
-  <div
-    className="calc-wrapper"
-  >
-    <div>
-      <span
-        className="input"
-      >
-        0
-      </span>
-    </div>
-    <div
-      className="row"
-    >
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        7
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        8
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        9
-      </button>
-      <button
-        className="button-operator"
-        onClick={[Function]}
-      >
-        +
-      </button>
-    </div>
-    <div
-      className="row"
-    >
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        4
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        5
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        6
-      </button>
-      <button
-        className="button-operator"
-        onClick={[Function]}
-      >
-        /
-      </button>
-    </div>
-    <div
-      className="row"
-    >
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        1
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        2
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        3
-      </button>
-      <button
-        className="button-operator"
-        onClick={[Function]}
-      >
-        *
-      </button>
-    </div>
-    <div
-      className="row"
-    >
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        0
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        .
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        =
-      </button>
-      <button
-        className="button-operator"
-        onClick={[Function]}
-      >
-        -
-      </button>
-    </div>
-    <div
-      className="row"
-    >
-      <button
-        className="button-operator"
-        onClick={[Function]}
-      >
-        C
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
 <div
   className="App"
@@ -150,6 +10,7 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     <div>
       <span
         className="input"
+        data-cy="displayResult"
       >
         0
       </span>
@@ -159,24 +20,28 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     >
       <button
         className="button"
+        data-cy="button7"
         onClick={[Function]}
       >
         7
       </button>
       <button
         className="button"
+        data-cy="button8"
         onClick={[Function]}
       >
         8
       </button>
       <button
         className="button"
+        data-cy="button9"
         onClick={[Function]}
       >
         9
       </button>
       <button
         className="button-operator"
+        data-cy="buttonPlus"
         onClick={[Function]}
       >
         +
@@ -187,24 +52,28 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     >
       <button
         className="button"
+        data-cy="button4"
         onClick={[Function]}
       >
         4
       </button>
       <button
         className="button"
+        data-cy="button5"
         onClick={[Function]}
       >
         5
       </button>
       <button
         className="button"
+        data-cy="button6"
         onClick={[Function]}
       >
         6
       </button>
       <button
         className="button-operator"
+        data-cy="buttonDivide"
         onClick={[Function]}
       >
         /
@@ -215,24 +84,28 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     >
       <button
         className="button"
+        data-cy="button1"
         onClick={[Function]}
       >
         1
       </button>
       <button
         className="button"
+        data-cy="button2"
         onClick={[Function]}
       >
         2
       </button>
       <button
         className="button"
+        data-cy="button3"
         onClick={[Function]}
       >
         3
       </button>
       <button
         className="button-operator"
+        data-cy="buttonMulti"
         onClick={[Function]}
       >
         *
@@ -243,24 +116,28 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     >
       <button
         className="button"
+        data-cy="button0"
         onClick={[Function]}
       >
         0
       </button>
       <button
         className="button"
+        data-cy="buttonDot"
         onClick={[Function]}
       >
         .
       </button>
       <button
         className="button"
+        data-cy="buttonEqual"
         onClick={[Function]}
       >
         =
       </button>
       <button
         className="button-operator"
+        data-cy="buttonSubtract"
         onClick={[Function]}
       >
         -
@@ -271,6 +148,7 @@ exports[`Snapshot, container renders correctly Matches the snapshot 1`] = `
     >
       <button
         className="button-operator"
+        data-cy="buttonClear"
         onClick={[Function]}
       >
         C
