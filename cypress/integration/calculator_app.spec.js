@@ -37,3 +37,4 @@ describe("Basic calculator operations", () => {
     cy.get("[data-cy=buttonClear]").click();
   });
 });
+
