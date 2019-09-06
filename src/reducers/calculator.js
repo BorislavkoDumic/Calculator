@@ -23,18 +23,27 @@ export const calculate = (displayValue, previusNumber, operator) => {
   }
 };
 
-
 const calculator = (state = initialState, action) => {
-    switch (action.type) {
-      case actionTypes.INPUT_NUMBER:
-        return {
-          ...state,
-          lastButton: action.number,
-          displayValue:
-            state.displayValue === "0"
-              ? action.number.toString()
-              : `${state.displayValue}${action.number}`
-        };
+  switch (action.type) {
+    case actionTypes.INPUT_NUMBER:
+      let newDisplayValue = state.displayValue;
+      if (state.displayValue === "0" && action.number !== ".") {
+        newDisplayValue = action.number.toString();
+      } else if (
+        (action.number === "." && !state.displayValue.includes(".")) ||
+        action.number !== "."
+      ) {
+        newDisplayValue = `${state.displayValue}${action.number}`;
+      }
+      let inputNumber = {
+        ...state,
+        lastButton: action.number,
+        displayValue: newDisplayValue
+      };
+
+      inputNumber.lastButton = action.number;
+
+      return inputNumber;
 
     case actionTypes.INPUT_OPERATOR:
       let inputOperator = {
@@ -43,7 +52,7 @@ const calculator = (state = initialState, action) => {
         operator: action.operator
       };
       if (state.operator && parseFloat(state.displayValue) !== 0) {
-          inputOperator.previusNumber = calculate(
+        inputOperator.previusNumber = calculate(
           parseFloat(state.displayValue),
           state.previusNumber,
           state.operator
@@ -52,6 +61,7 @@ const calculator = (state = initialState, action) => {
         inputOperator.previusNumber = parseFloat(state.displayValue);
       }
       inputOperator.lastButton = action.operator;
+
       return inputOperator;
 
     case actionTypes.INPUT_EQUAL:
