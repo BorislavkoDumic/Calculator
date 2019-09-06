@@ -24,13 +24,22 @@ export const calculate = (displayValue, previusNumber, operator) => {
 const calculator = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INPUT_NUMBER:
-      return {
+      let newDisplayValue = state.displayValue;
+      if (state.displayValue === "0" && action.number !== ".") {
+        newDisplayValue = action.number.toString();
+      } else if (
+        (action.number === "." && !state.displayValue.includes(".")) ||
+        action.number !== "."
+      ) {
+        newDisplayValue = `${state.displayValue}${action.number}`;
+      }
+      let inputNumber = {
         ...state,
-        displayValue:
-          state.displayValue === "0"
-            ? action.number.toString()
-            : `${state.displayValue}${action.number}`
+        displayValue: newDisplayValue
       };
+
+      return inputNumber;
+
     case actionTypes.INPUT_OPERATOR:
       return {
         displayValue: "0",
