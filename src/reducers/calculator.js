@@ -38,8 +38,6 @@ const calculator = (state = initialState, action) => {
         displayValue: newDisplayValue
       };
 
-      inputNumber.lastButton = action.number;
-
       return inputNumber;
 
     case actionTypes.INPUT_OPERATOR:

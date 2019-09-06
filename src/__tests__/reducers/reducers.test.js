@@ -103,7 +103,7 @@ describe("When action is clicked", () => {
     const expectedState = {
       displayValue: "91",
       operator: null,
-      previusNumber: 0
+      previusNumber: 0,
     };
     expect(calculator(state, onNumClick(1))).toEqual(expectedState);
     expect(onNumClick(1)).toEqual({ number: 1, type: "INPUT_NUMBER" });
