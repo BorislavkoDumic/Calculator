@@ -56,6 +56,24 @@ describe("Isuses from github", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000");
   });
+  it("Get error after calcualtion (8//2) from #7", () => {
+    cy.get("[data-cy=button8]").click();
+    cy.get("[data-cy=buttonDivide").click();
+    cy.get("[data-cy=buttonDivide").click();
+    cy.get("[data-cy=button2]").click();
+    cy.get("[data-cy=buttonEqual]").click();
+    cy.get("[data-cy=displayResult]").contains("4");
+    cy.get("[data-cy=buttonClear]").click();
+  });
+  it("Get error after calcualtion (8*/2) from #7", () => {
+    cy.get("[data-cy=button8]").click();
+    cy.get("[data-cy=buttonMulti").click();
+    cy.get("[data-cy=buttonDivide").click();
+    cy.get("[data-cy=button2]").click();
+    cy.get("[data-cy=buttonEqual]").click();
+    cy.get("[data-cy=displayResult]").contains("4");
+    cy.get("[data-cy=buttonClear]").click();
+  });
   it("Get error after calcualtion (3..5+4) from #8", () => {
     cy.get("[data-cy=button3]").click();
     cy.get("[data-cy=buttonDot").click();

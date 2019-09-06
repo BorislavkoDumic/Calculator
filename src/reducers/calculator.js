@@ -4,7 +4,8 @@ import * as operators from "../utils/actionTypes";
 const initialState = {
   displayValue: "0",
   operator: null,
-  previusNumber: 0
+  previusNumber: 0,
+  lastButton: null
 };
 
 export const calculate = (displayValue, previusNumber, operator) => {
@@ -21,6 +22,7 @@ export const calculate = (displayValue, previusNumber, operator) => {
       return displayValue;
   }
 };
+
 const calculator = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INPUT_NUMBER:
@@ -35,23 +37,32 @@ const calculator = (state = initialState, action) => {
       }
       let inputNumber = {
         ...state,
+        lastButton: action.number,
         displayValue: newDisplayValue
       };
 
       return inputNumber;
 
     case actionTypes.INPUT_OPERATOR:
-      return {
+      let inputOperator = {
+        ...state,
         displayValue: "0",
-        operator: action.operator,
-        previusNumber: state.operator
-          ? calculate(
-              parseFloat(state.displayValue),
-              state.previusNumber,
-              state.operator
-            )
-          : parseFloat(state.displayValue)
+        operator: action.operator
       };
+      const displayValue = parseFloat(state.displayValue);
+      if (state.operator && displayValue !== 0) {
+        inputOperator.previusNumber = calculate(
+          displayValue,
+          state.previusNumber,
+          state.operator
+        );
+      } else if (!isNaN(inputOperator.lastButton)) {
+        inputOperator.previusNumber = displayValue;
+      }
+      inputOperator.lastButton = action.operator;
+
+      return inputOperator;
+
     case actionTypes.INPUT_EQUAL:
       return {
         displayValue: calculate(
