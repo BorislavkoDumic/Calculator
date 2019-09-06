@@ -51,3 +51,20 @@ describe("Complex calculator operations", () => {
     cy.get("[data-cy=buttonClear]").click();
   });
 });
+
+describe("Isuses from github", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:3000");
+  });
+  it("Get error after calcualtion (3..5+4) from #8", () => {
+    cy.get("[data-cy=button3]").click();
+    cy.get("[data-cy=buttonDot").click();
+    cy.get("[data-cy=buttonDot").click();
+    cy.get("[data-cy=button5]").click();
+    cy.get("[data-cy=buttonPlus]").click();
+    cy.get("[data-cy=button4]").click();
+    cy.get("[data-cy=buttonEqual]").click();
+    cy.get("[data-cy=displayResult]").contains("7.5");
+    cy.get("[data-cy=buttonClear]").click();
+  });
+});
