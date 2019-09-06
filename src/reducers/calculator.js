@@ -51,14 +51,15 @@ const calculator = (state = initialState, action) => {
         displayValue: "0",
         operator: action.operator
       };
-      if (state.operator && parseFloat(state.displayValue) !== 0) {
+      const displayValue = parseFloat(state.displayValue);
+      if (state.operator && displayValue !== 0) {
         inputOperator.previusNumber = calculate(
-          parseFloat(state.displayValue),
+          displayValue,
           state.previusNumber,
           state.operator
         );
       } else if (!isNaN(inputOperator.lastButton)) {
-        inputOperator.previusNumber = parseFloat(state.displayValue);
+        inputOperator.previusNumber = displayValue;
       }
       inputOperator.lastButton = action.operator;
 
