@@ -23,35 +23,37 @@ export const calculate = (displayValue, previusNumber, operator) => {
   }
 };
 
+
 const calculator = (state = initialState, action) => {
-  switch (action.type) {
-    case actionTypes.INPUT_NUMBER:
-      return {
-        ...state,
-        lastButton: action.number,
-        displayValue:
-          state.displayValue === "0"
-            ? action.number.toString()
-            : `${state.displayValue}${action.number}`
-      };
+    switch (action.type) {
+      case actionTypes.INPUT_NUMBER:
+        return {
+          ...state,
+          lastButton: action.number,
+          displayValue:
+            state.displayValue === "0"
+              ? action.number.toString()
+              : `${state.displayValue}${action.number}`
+        };
+
     case actionTypes.INPUT_OPERATOR:
-      let a = {
+      let inputOperator = {
         ...state,
         displayValue: "0",
         operator: action.operator
       };
-      let lastButton = a.lastButton;
-      if (lastButton !== a.operator) {
-        a.previusNumber = state.operator
-          ? calculate(
-              parseFloat(state.displayValue),
-              state.previusNumber,
-              state.operator
-            )
-          : parseFloat(state.displayValue);
+      if (state.operator && parseFloat(state.displayValue) !== 0) {
+          inputOperator.previusNumber = calculate(
+          parseFloat(state.displayValue),
+          state.previusNumber,
+          state.operator
+        );
+      } else if (!isNaN(inputOperator.lastButton)) {
+        inputOperator.previusNumber = parseFloat(state.displayValue);
       }
-      a.lastButton = action.operator;
-      return a;
+      inputOperator.lastButton = action.operator;
+      return inputOperator;
+
     case actionTypes.INPUT_EQUAL:
       return {
         displayValue: calculate(

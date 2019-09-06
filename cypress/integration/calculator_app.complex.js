@@ -65,4 +65,13 @@ describe("Isuses from github", () => {
     cy.get("[data-cy=displayResult]").contains("4");
     cy.get("[data-cy=buttonClear]").click();
   });
+  it("Get error after calcualtion (8*/2) from #7", () => {
+    cy.get("[data-cy=button8]").click();
+    cy.get("[data-cy=buttonMulti").click();
+    cy.get("[data-cy=buttonDivide").click();
+    cy.get("[data-cy=button2]").click();
+    cy.get("[data-cy=buttonEqual]").click();
+    cy.get("[data-cy=displayResult]").contains("4");
+    cy.get("[data-cy=buttonClear]").click();
+  });
 });

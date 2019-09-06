@@ -61,13 +61,13 @@ describe("When action is clicked", () => {
       displayValue: "0",
       operator: operators.PLUS,
       previusNumber: 0,
-      lastButton:null
+      lastButton: null
     };
     const expectedState = {
       displayValue: "0",
       operator: operators.PLUS,
       previusNumber: 0,
-      lastButton:"PLUS"
+      lastButton: "PLUS"
     };
     expect(calculator(state, onOpeClick(operators.PLUS))).toEqual(
       expectedState
@@ -82,13 +82,13 @@ describe("When action is clicked", () => {
       displayValue: "4",
       operator: null,
       previusNumber: 0,
-      lastButton:null
+      lastButton: null
     };
     const expectedState = {
       displayValue: "0",
       operator: operators.PLUS,
       previusNumber: 4,
-      lastButton:"PLUS"
+      lastButton: "PLUS"
     };
     expect(calculator(state, onOpeClick(operators.PLUS))).toEqual(
       expectedState
@@ -103,13 +103,13 @@ describe("When action is clicked", () => {
       displayValue: "9",
       operator: null,
       previusNumber: 0,
-      lastButton:null
+      lastButton: null
     };
     const expectedState = {
       displayValue: "91",
       operator: null,
       previusNumber: 0,
-      lastButton:1
+      lastButton: 1
     };
     expect(calculator(state, onNumClick(1))).toEqual(expectedState);
     expect(onNumClick(1)).toEqual({ number: 1, type: "INPUT_NUMBER" });
